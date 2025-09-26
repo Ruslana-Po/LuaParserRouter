@@ -1,0 +1,27 @@
+# Билд-директории Eclipse
+Debug/
+Release/
+build/
+bin/
+obj/
+
+# Скомпилированные файлы
+*.o
+*.d
+*.exe
+test2
+
+# Файлы сборки
+makefile
+sources.mk
+subdir.mk
+*.mk
+
+# Eclipse специфичные файлы (но некоторые нужны!)
+# .project и .cproject обычно нужны для импорта проекта
+# .settings/ можно добавить в исключения выборочно
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+*~
