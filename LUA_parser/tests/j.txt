@@ -1,0 +1,30 @@
+local value = 50
+
+if value > 0 then
+    print("Уровень 1: value > 0")
+    if value > 10 then
+        print("Уровень 2: value > 10")
+    elseif value > 5 then
+        print("Уровень 2: value > 5")
+    elseif value > 7 then
+        print("Уровень 2: value > 7")
+    elseif value > 8 then
+        print("Уровень 2: value > 8")
+    elseif value > 9 then
+        print("Уровень 2: value > 9")
+    else
+        print("Уровень 2: value <= 10")
+    end
+elseif value == 0 then
+    print("Уровень 1: value == 0")
+elseif value < 0 then
+    print("Уровень 1: value < 0")
+elseif value == nil then
+    print("Уровень 1: value == nil")
+elseif type(value) ~= "number" then
+    print("Уровень 1: value не число")
+else
+    print("Уровень 1: неизвестное значение")
+end
+
+print("Тестирование парсера завершено!")

@@ -1,0 +1,16 @@
+    value = 50
+
+if value > 0 then
+    value = value - 4
+elseif value == 0 then
+    value = value + 10
+elseif value < 50 then
+    value = 50
+elseif value == 50 then
+    value = value - 40
+elseif value < 10 then
+    value = math.cos(value, 0)
+ending
+else
+    value = 11
+end

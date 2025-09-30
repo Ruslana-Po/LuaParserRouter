@@ -1,27 +1,83 @@
-# Билд-директории Eclipse
+# Eclipse IDE
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# CDT- automatic test files
+*.tst
+
+# Code analysis
+*.xtest
+
+# Debug directory
 Debug/
 Release/
-build/
-bin/
-obj/
 
-# Скомпилированные файлы
+# Compiled object files
 *.o
-*.d
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
 *.exe
-test2
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
 
-# Файлы сборки
-makefile
-sources.mk
-subdir.mk
-*.mk
+# Debug files
+*.dbg
+*.su
+*.idb
+*.pdb
 
-# Eclipse специфичные файлы (но некоторые нужны!)
-# .project и .cproject обычно нужны для импорта проекта
-# .settings/ можно добавить в исключения выборочно
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
 
-# Системные файлы
-.DS_Store
-Thumbs.db
-*~
+# Binaries - на всякий случай
+Binaries/
+
+# Временные файлы
+*.tmp
+*.temp

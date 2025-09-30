@@ -1,0 +1,230 @@
+local value = 50
+local result = 0
+
+if value > 0 then
+    result = result + 1
+    if value > 10 then
+        result = result + 10
+        if value > 20 then
+            result = result + 20
+            if value > 30 then
+                result = result + 30
+                if value > 40 then
+                    result = result + 40
+                    if value == 50 then
+                        result = result + 50
+                        if value >= 50 then
+                            result = result + 60
+                            if value <= 50 then
+                                result = result + 70
+                                if value ~= 60 then
+                                    result = result + 80
+                                    if value < 100 then
+                                        result = result + 90
+                                        if value > 25 then
+                                            result = result + 100
+                                            if value < 75 then
+                                                result = result + 110
+                                                if value % 2 == 0 then
+                                                    result = result + 120
+                                                    if value % 5 == 0 then
+                                                        result = result + 130
+                                                        if value % 10 == 0 then
+                                                            result = result + 140
+                                                            if value + 50 == 100 then
+                                                                result = result + 150
+                                                                if value * 2 == 100 then
+                                                                    result = result + 160
+                                                                    if value / 2 == 25 then
+                                                                        result = result + 170
+                                                                        if value - 25 == 25 then
+                                                                            result = result + 180
+                                                                            if value * 2 == 2500 then
+                                                                                result = result + 190
+                                                                                result = result + 1000
+                                                                            elseif value * 2 > 2000 then
+                                                                                result = result + 191
+                                                                            elseif value * 2 < 3000 then
+                                                                                result = result + 192
+                                                                            else
+                                                                                result = result + 193
+                                                                            end
+                                                                        elseif value - 25 > 20 then
+                                                                            result = result + 181
+                                                                        elseif value - 25 < 30 then
+                                                                            result = result + 182
+                                                                        else
+                                                                            result = result + 183
+                                                                        end
+                                                                    elseif value / 2 > 20 then
+                                                                        result = result + 171
+                                                                    elseif value / 2 < 30 then
+                                                                        result = result + 172
+                                                                    else
+                                                                        result = result + 173
+                                                                    end
+                                                                elseif value * 2 > 90 then
+                                                                    result = result + 161
+                                                                elseif value * 2 < 110 then
+                                                                    result = result + 162
+                                                                else
+                                                                    result = result + 163
+                                                                end
+                                                            elseif value + 50 > 90 then
+                                                                result = result + 151
+                                                            elseif value + 50 < 110 then
+                                                                result = result + 152
+                                                            else
+                                                                result = result + 153
+                                                            end
+                                                        elseif value % 10 == 5 then
+                                                            result = result + 141
+                                                        elseif value % 10 < 5 then
+                                                            result = result + 142
+                                                        else
+                                                            result = result + 143
+                                                        end
+                                                    elseif value % 5 == 1 then
+                                                        result = result + 131
+                                                    elseif value % 5 == 2 then
+                                                        result = result + 132
+                                                    elseif value % 5 == 3 then
+                                                        result = result + 133
+                                                    elseif value % 5 == 4 then
+                                                        result = result + 134
+                                                    else
+                                                        result = result + 135
+                                                    end
+                                                elseif value % 2 == 1 then
+                                                    result = result + 121
+                                                else
+                                                    result = result + 122
+                                                end
+                                            elseif value < 50 then
+                                                result = result + 111
+                                            elseif value > 75 then
+                                                result = result + 112
+                                            else
+                                                result = result + 113
+                                            end
+                                        elseif value > 30 then
+                                            result = result + 101
+                                        elseif value > 35 then
+                                            result = result + 102
+                                        elseif value > 40 then
+                                            result = result + 103
+                                        elseif value > 45 then
+                                            result = result + 104
+                                        else
+                                            result = result + 105
+                                        end
+                                    elseif value < 50 then
+                                        result = result + 91
+                                    elseif value < 60 then
+                                        result = result + 92
+                                    elseif value < 70 then
+                                        result = result + 93
+                                    elseif value < 80 then
+                                        result = result + 94
+                                    elseif value < 90 then
+                                        result = result + 95
+                                    else
+                                        result = result + 96
+                                    end
+                                elseif value ~= 50 then
+                                    result = result + 81
+                                elseif value ~= 55 then
+                                    result = result + 82
+                                elseif value ~= 60 then
+                                    result = result + 83
+                                else
+                                    result = result + 84
+                                end
+                            elseif value <= 40 then
+                                result = result + 71
+                            elseif value <= 45 then
+                                result = result + 72
+                            elseif value <= 55 then
+                                result = result + 73
+                            elseif value <= 60 then
+                                result = result + 74
+                            else
+                                result = result + 75
+                            end
+                        elseif value >= 40 then
+                            result = result + 61
+                        elseif value >= 45 then
+                            result = result + 62
+                        elseif value >= 55 then
+                            result = result + 63
+                        elseif value >= 60 then
+                            result = result + 64
+                        else
+                            result = result + 65
+                        end
+                    elseif value == 45 then
+                        result = result + 51
+                    elseif value == 55 then
+                        result = result + 52
+                    elseif value == 60 then
+                        result = result + 53
+                    elseif value == 65 then
+                        result = result + 54
+                    elseif value == 70 then
+                        result = result + 55
+                    else
+                        result = result + 56
+                    end
+                elseif value > 35 then
+                    result = result + 41
+                elseif value > 38 then
+                    result = result + 42
+                elseif value > 42 then
+                    result = result + 43
+                elseif value > 46 then
+                    result = result + 44
+                else
+                    result = result + 45
+                end
+            elseif value > 25 then
+                result = result + 31
+            elseif value > 28 then
+                result = result + 32
+            elseif value > 32 then
+                result = result + 33
+            else
+                result = result + 34
+            end
+        elseif value > 15 then
+            result = result + 21
+        elseif value > 18 then
+            result = result + 22
+        elseif value > 22 then
+            result = result + 23
+        else
+            result = result + 24
+        end
+    elseif value > 5 then
+        result = result + 11
+    elseif value > 7 then
+        result = result + 12
+    elseif value > 8 then
+        result = result + 13
+    elseif value > 9 then
+        result = result + 14
+    else
+        result = result + 15
+    end
+elseif value == 0 then
+    result = result + 2
+elseif value < 0 then
+    result = result + 3
+elseif value == nil then
+    result = result + 4
+elseif value == 4 then
+    result = result + 5
+else
+    result = result + 6
+end
+
+local final_result = result + value

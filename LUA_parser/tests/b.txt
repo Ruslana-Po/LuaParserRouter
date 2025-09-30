@@ -1,0 +1,34 @@
+x = 4
+y = 2
+z = 0
+z = math.cos(x)
+z = math.tan(x)
+z = math.asin(x)
+z = math.acos(x)
+z = math.atan(x)
+z = math.atan2(y, x)
+z = math.exp(x)
+z = math.log(x)
+z = math.log10(x)
+z = math.sqrt(x)
+z = math.pow(x, y)
+z = math.max(x, y)
+z = math.min(x, y)
+z = math.random()
+z = math.random(x, y)
+z = math.fmod(x, y)
+z = math.pi
+z = math.huge 
+value = 50
+valuethen = 2
+if(valuethen > 0)then
+    if value < 50 then value = value - 40 end
+            value = value - (-5)
+            value = value - 4   
+        elseif (value == 0) then
+            value = (value + 10)
+        else
+            if value < 50 then value = value - 40 end
+            value = 11
+        end
+(valuethen = 4)
