@@ -5,11 +5,7 @@ using namespace std;
 
 class ParseCodeTest : public ::testing::Test {
 protected:
-    void SetUp() override {
-        parse_code = make_unique<ParseCode>();
-    }
-    
-    unique_ptr<ParseCode> parse_code;
+    unique_ptr<ParseCode> parse_code = make_unique<ParseCode>();
 };
 
 TEST_F(ParseCodeTest, EmptyInput) {
@@ -36,10 +32,39 @@ TEST_F(ParseCodeTest, CheckFuncWithValidRoot) {
     TreeNode root(root_data);
     EXPECT_NO_THROW(parse_code->CheckFunc(&root));
 }
+//nullptr
+#pragma region kek
+TEST_F(ParseCodeTest, ParseBodyWithNullRoot) {
+    EXPECT_DEATH(parse_code->ParseBody(nullptr), ".*");
+}
 
+TEST_F(ParseCodeTest, CheckFuncWithNullRoot) {
+    EXPECT_DEATH(parse_code->CheckFunc(nullptr), ".*");
+}
+#pragma endregion
 
+//Условные операторы
+#pragma region kek
 TEST_F(ParseCodeTest, CodeParseThrowsParse) {
     string input = "if x == 5 then y = 10";
+    vector<string> variables;
+    EXPECT_THROW(parse_code->CodeParse(input, variables), ParseException);
+}
+// Попробовать вызвать ошибки
+TEST_F(ParseCodeTest, OnlyIf) {
+    string input = "if x == 5 ";
+    vector<string> variables;
+    EXPECT_THROW(parse_code->CodeParse(input, variables), ParseException);
+}
+
+TEST_F(ParseCodeTest, NoThen) {
+    string input = "if x == 5 end ";
+    vector<string> variables;
+    EXPECT_THROW(parse_code->CodeParse(input, variables), ParseException);
+}
+
+TEST_F(ParseCodeTest, OnlyEqually) {
+    string input = " = ";
     vector<string> variables;
     EXPECT_THROW(parse_code->CodeParse(input, variables), ParseException);
 }
@@ -60,7 +85,10 @@ TEST_F(ParseCodeTest, CodeParseThrowsOnEndWithoutIf) {
     vector<string> variables;
     EXPECT_THROW(parse_code->CodeParse(input, variables), ParseException);
 }
+#pragma endregion
 
+//Проверка конкретного метода
+#pragma region kek
 // 5 не должна сохрантся
 TEST_F(ParseCodeTest, VariablesExtractsVariableNodesTwo) {
     NodeData root_data("root", NodeType::ROOT, 0);
@@ -94,4 +122,4 @@ TEST_F(ParseCodeTest, VariablesExtractsVariableNodesY) {
     parse_code->Variables(&root, variables);
     EXPECT_EQ("y", variables[1]);
 }
-
+#pragma endregion

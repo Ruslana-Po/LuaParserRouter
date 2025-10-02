@@ -7,7 +7,8 @@ protected:
     Function test;
 };
 
-//FunctionParse
+//abs
+#pragma region kek
 TEST_F(FunctionTest, EmptyString) {
     string func="";
     int arg =1;
@@ -37,6 +38,23 @@ TEST_F(FunctionTest, FunctionWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
+//Проверка каждой функции на пустое значение и разные аргументы
+//match.acos уже проверен, поэтому с функцие принимающих разное значение и которые я начинала проверять
+// atan
+#pragma region kek
+TEST_F(FunctionTest, AtanWithNoArgument) {
+    string func="math.atan";
+    int arg =0;
+    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
+}
+
+TEST_F(FunctionTest, AtanWithThreeArgument) {
+    string func="math.atan";
+    int arg =3;
+    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
+}
 
 TEST_F(FunctionTest, AtanWithTwoArgument) {
     string func="math.atan";
@@ -49,7 +67,21 @@ TEST_F(FunctionTest, AtanWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
+//Log
+#pragma region kek
+TEST_F(FunctionTest, LogWithNoArgument) {
+    string func="math.log";
+    int arg =0;
+    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
+}
+
+TEST_F(FunctionTest, LogWithThreeArgument) {
+    string func="math.log";
+    int arg =3;
+    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
+}
 TEST_F(FunctionTest, LogWithTwoArgument) {
     string func="math.log";
     int arg =2;
@@ -60,6 +92,16 @@ TEST_F(FunctionTest, LogWithOneArgument) {
     string func="math.log";
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
+}
+
+#pragma endregion
+
+//Random
+#pragma region kek
+TEST_F(FunctionTest, RandomWithThreeArgument) {
+    string func="math.random";
+    int arg =3;
+    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
 }
 
 TEST_F(FunctionTest, RandomWithTwoArgument) {
@@ -79,41 +121,10 @@ TEST_F(FunctionTest, RandomNoArgument) {
     int arg =0;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
-
-//Проверка каждой функции на пустое значение и разные аргументы
-//match.acos уже проверен, поэтому с функцие принимающих разное значение и которые я начинала проверять
-// atan
-TEST_F(FunctionTest, AtanWithNoArgument) {
-    string func="math.atan";
-    int arg =0;
-    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
-}
-
-TEST_F(FunctionTest, AtanWithThreeArgument) {
-    string func="math.atan";
-    int arg =3;
-    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
-}
-//Log
-TEST_F(FunctionTest, LogWithNoArgument) {
-    string func="math.log";
-    int arg =0;
-    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
-}
-
-TEST_F(FunctionTest, LogWithThreeArgument) {
-    string func="math.log";
-    int arg =3;
-    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
-}
-//Random
-TEST_F(FunctionTest, RandomWithThreeArgument) {
-    string func="math.random";
-    int arg =3;
-    ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
-}
+#pragma endregion
 
 //acos
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgAcos) {
     string func="math.acos";
     int arg =0;
@@ -131,7 +142,10 @@ TEST_F(FunctionTest, AcosWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
 //asin
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgAsin) {
     string func="math.asin";
     int arg =0;
@@ -149,8 +163,10 @@ TEST_F(FunctionTest, AsinWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //atan2
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgAtan2) {
     string func="math.atan2";
     int arg =0;
@@ -168,8 +184,10 @@ TEST_F(FunctionTest, Atan2WithThreeArgument) {
     int arg =3;
     ASSERT_THROW(test.FunctionParse(func,arg), std::invalid_argument);
 }
+#pragma endregion
 
 //ceil
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgCeil) {
     string func="math.ceil";
     int arg =0;
@@ -187,8 +205,10 @@ TEST_F(FunctionTest, CeilWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //cos
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgCos) {
     string func="math.cos";
     int arg =0;
@@ -206,8 +226,10 @@ TEST_F(FunctionTest, CosWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //cosh
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgCosh) {
     string func="math.cosh";
     int arg =0;
@@ -225,8 +247,10 @@ TEST_F(FunctionTest, CoshWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //deg
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgDeg) {
     string func="math.deg";
     int arg =0;
@@ -244,7 +268,10 @@ TEST_F(FunctionTest, DegWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
 //exp
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgExp) {
     string func="math.exp";
     int arg =0;
@@ -262,8 +289,10 @@ TEST_F(FunctionTest, ExpWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //floor
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgFloor) {
     string func="math.floor";
     int arg =0;
@@ -281,8 +310,10 @@ TEST_F(FunctionTest, FloorWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //fmod
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgFmod) {
     string func="math.fmod";
     int arg =0;
@@ -300,7 +331,11 @@ TEST_F(FunctionTest, FmodWithTwoArgument) {
     int arg =2;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+
+#pragma endregion
+
 //frexp
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgFrexp) {
     string func="math.frexp";
     int arg =0;
@@ -318,7 +353,10 @@ TEST_F(FunctionTest, FrexpWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
 //huge
+#pragma region kek
 TEST_F(FunctionTest, LotOfArgumentsHuge) {
     string func="math.huge";
     int arg =2;
@@ -330,8 +368,10 @@ TEST_F(FunctionTest, HugeWithNullArgument) {
     int arg =0;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //ldexp
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgLdexp) {
     string func="math.ldexp";
     int arg =0;
@@ -349,8 +389,10 @@ TEST_F(FunctionTest, LdexpWithTwoArgument) {
     int arg =2;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //Log10
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgLog10) {
     string func="math.log10";
     int arg =0;
@@ -368,7 +410,9 @@ TEST_F(FunctionTest, Log10WithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 //max
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgMax) {
     string func="math.max";
     int arg =0;
@@ -392,7 +436,10 @@ TEST_F(FunctionTest, MaxWithManyArgument) {
     int arg =5;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
 //min
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgMin) {
     string func="math.min";
     int arg =0;
@@ -416,7 +463,10 @@ TEST_F(FunctionTest, MinWithManyArgument) {
     int arg =5;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
 //modf
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgModf) {
     string func="math.modf";
     int arg =0;
@@ -434,7 +484,10 @@ TEST_F(FunctionTest, ModfWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
 //pi
+#pragma region kek
 TEST_F(FunctionTest, LotOfArgumentsPi) {
     string func="math.pi";
     int arg =2;
@@ -445,8 +498,11 @@ TEST_F(FunctionTest, PiWithNullArgument) {
     string func="math.pi";
     int arg =0;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
+
 }
+#pragma endregion
 //pow
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgPow) {
     string func="math.pow";
     int arg =0;
@@ -464,7 +520,11 @@ TEST_F(FunctionTest, PowWithTwoArgument) {
     int arg =2;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
+
 //rad
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgRad) {
     string func="math.rad";
     int arg =0;
@@ -482,7 +542,10 @@ TEST_F(FunctionTest, RadWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
 //randomseed
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgRandomseed) {
     string func="math.randomseed";
     int arg =0;
@@ -500,7 +563,10 @@ TEST_F(FunctionTest, RandomseedWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
+
 //sin
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgSin) {
     string func="math.sin";
     int arg =0;
@@ -518,8 +584,10 @@ TEST_F(FunctionTest, SinWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //sinh
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgSinh) {
     string func="math.sinh";
     int arg =0;
@@ -537,8 +605,10 @@ TEST_F(FunctionTest, SinhWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 
 //sqrt
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgSqrt) {
     string func="math.sqrt";
     int arg =0;
@@ -556,8 +626,9 @@ TEST_F(FunctionTest, SqrtWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
-
+#pragma endregion
 //tan
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgTan) {
     string func="math.tan";
     int arg =0;
@@ -575,7 +646,9 @@ TEST_F(FunctionTest, TanWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 //tanh
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgTanh) {
     string func="math.tanh";
     int arg =0;
@@ -593,7 +666,9 @@ TEST_F(FunctionTest, TanhWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 //tointeger
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgTointeger) {
     string func="math.tointeger";
     int arg =0;
@@ -611,7 +686,9 @@ TEST_F(FunctionTest, TointegerWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 //type
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgType) {
     string func="math.type";
     int arg =0;
@@ -629,7 +706,9 @@ TEST_F(FunctionTest, TypeWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 //ult
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgUlt) {
     string func="math.ult";
     int arg =0;
@@ -647,8 +726,9 @@ TEST_F(FunctionTest, UltWithTwoArgument) {
     int arg =2;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
-
+#pragma endregion
 //set
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgSet) {
     string func="set";
     int arg =0;
@@ -666,7 +746,9 @@ TEST_F(FunctionTest, SetWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 //self
+#pragma region kek
 TEST_F(FunctionTest, LotOfArgumentsSelf) {
     string func="self";
     int arg =2;
@@ -678,7 +760,9 @@ TEST_F(FunctionTest, SelfWithNullArgument) {
     int arg =0;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 //update
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgUpdate) {
     string func="update";
     int arg =0;
@@ -696,7 +780,9 @@ TEST_F(FunctionTest, UpdateWithOneArgument) {
     int arg =1;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 //delay
+#pragma region kek
 TEST_F(FunctionTest, EmptyArgDelay) {
     string func="delay";
     int arg =0;
@@ -714,7 +800,9 @@ TEST_F(FunctionTest, DelayWithTwoArgument) {
     int arg =2;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion
 //Проверить еще на какие-то ошибки 
+#pragma region kek
 //пусть будет не только функция
 //??
 TEST_F(FunctionTest, NoOneFunc) {
@@ -734,3 +822,4 @@ TEST_F(FunctionTest, TwoFuncDefArg) {
     int arg =2;
     ASSERT_NO_THROW(test.FunctionParse(func,arg));
 }
+#pragma endregion

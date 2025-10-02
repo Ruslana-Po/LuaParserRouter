@@ -4,12 +4,16 @@ using namespace std;
 
 class TreeNodeTest : public ::testing::Test {
 protected:
-    void SetUp() override {
-        test_data = NodeData("test", NodeType::VARIABLE, 10);
-    }
-    NodeData test_data;
+    NodeData test_data{"test", NodeType::VARIABLE, 10};
 };
+//nullptr
+TEST_F(TreeNodeTest, AddNullChild) {
+    TreeNode node(test_data);
+    EXPECT_DEATH(node.AddChild(nullptr), ".*");
+}
 
+//Конструктор инициализирует данные
+#pragma region kek
 TEST_F(TreeNodeTest, ConstructorInitializesDataOne) {
     TreeNode node(test_data);
     const NodeData& data = node.GetData();
@@ -26,6 +30,24 @@ TEST_F(TreeNodeTest, ConstructorInitializesDataThree) {
     TreeNode node(test_data);
     const NodeData& data = node.GetData();
     EXPECT_EQ(10, data.index);
+}
+#pragma endregion
+
+//Добавление детей
+#pragma region kek
+TEST_F(TreeNodeTest, ClearRemovesAllChildrenKol) {
+    TreeNode parent(test_data);
+    parent.AddChild("child1");
+    parent.AddChild("child2");
+    EXPECT_EQ(2, parent.GetChildren().size());
+}
+
+TEST_F(TreeNodeTest, ClearRemovesAllChildrenEmpty) {
+    TreeNode parent(test_data);
+    parent.AddChild("child1");
+    parent.AddChild("child2");
+    parent.Clear();
+    EXPECT_TRUE(parent.GetChildren().empty());
 }
 
 TEST_F(TreeNodeTest, AddChildCreatesNewChildNoNull) {
@@ -70,6 +92,8 @@ TEST_F(TreeNodeTest, AddChildStoresChildInVectorTwo) {
     const auto& children = parent.GetChildren();
     EXPECT_EQ("child2", children[1]->GetData().content);
 }
+#pragma endregion
+
 
 TEST_F(TreeNodeTest, AppendToContentModifiesData) {
     TreeNode node(test_data);
@@ -90,22 +114,9 @@ TEST_F(TreeNodeTest, ChangeIndexModifiesIndex) {
 }
 
 
-TEST_F(TreeNodeTest, ClearRemovesAllChildrenKol) {
-    TreeNode parent(test_data);
-    parent.AddChild("child1");
-    parent.AddChild("child2");
-    EXPECT_EQ(2, parent.GetChildren().size());
-}
-
-TEST_F(TreeNodeTest, ClearRemovesAllChildrenEmpty) {
-    TreeNode parent(test_data);
-    parent.AddChild("child1");
-    parent.AddChild("child2");
-    parent.Clear();
-    EXPECT_TRUE(parent.GetChildren().empty());
-}
 
 //NodeData
+#pragma region kek
 TEST(NodeDataTest, ConstructorWithParametersContent) {
     NodeData data("content", NodeType::FUNCTION, 15);
     EXPECT_EQ("content", data.content);
@@ -121,7 +132,7 @@ TEST(NodeDataTest, ConstructorWithParametersIndex) {
     EXPECT_EQ(15, data.index);
 }
 
-//ТОЖЕ САМОЕ С ПУСТОТОЙ
+
 
 TEST(NodeDataTest, DefaultConstructorComtent) {
     NodeData data;
@@ -137,5 +148,6 @@ TEST(NodeDataTest, DefaultConstructorIndex) {
     NodeData data;
     EXPECT_EQ(0, data.index);
 }
+#pragma endregion
 
 
